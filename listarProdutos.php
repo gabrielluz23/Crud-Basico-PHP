@@ -7,7 +7,19 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body style="background-color:#696969;color: white">
-
+ <?php 
+ session_start();
+  $usuario = $_SESSION['usuario'];
+  if( !isset($_SESSION['usuario'])==true ){
+     unset($_SESSION['usuario']);
+    header('Location: index.php');
+  }
+   include 'conexao.php';
+  $sql = "SELECT nivel_usuario FROM usuario WHERE email_usuario = '$usuario'";
+  $buscar = mysqli_query($conexao,$sql);
+  $dados = mysqli_fetch_array($buscar);
+  $nivel = $dados['nivel_usuario'];
+ ?>
 <div class="container" style="margin-top: 30px">
 <div class="text-right" style="margin-top: 40px"> 
   <a href="menu.php" role="button" class="btn btn-sm btn-primary">
@@ -29,7 +41,6 @@
   </thead>
 
       <?php
-        include 'conexao.php';
 
         $sql = "SELECT * FROM `estoque`";
         $busca = mysqli_query($conexao,$sql);
@@ -47,10 +58,23 @@
       <td><?php echo $categoria ?></td>
       <td><?php echo $quantidade ?></td>
       <td><?php echo $fornecedor ?></td>
+
+         <?php 
+ if(($nivel == 1) || ($nivel == 2)){
+
+ 
+ ?>
       <td><a class="btn btn-warning btn-sm" href="editar_produto.php?id=<?php echo 
       $id_estoque ?>" role = "button">Editar</a> </td>
+    <?php } ?>
+           <?php 
+ if($nivel == 1){
+
+ 
+ ?>
       <td><a class="btn btn-danger btn-sm" href="excluir_produto.php?id=<?php echo 
       $id_estoque ?>" role = "button">Excluir</a> </td>
+    <?php } ?>
   </tr>
 
     <?php } ?>

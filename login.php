@@ -1,5 +1,5 @@
 <?php 
-
+		session_start();
 include 'conexao.php';
 include 'scripts/password.php';
 $usuario = $_POST['emailUsuario'];
@@ -16,10 +16,10 @@ $senhadecodificada = sha1($senhaUsuario);
 
 
 if($total == 0){
+	unset ($_SESSION['usuario']);
 header('Location: erro.php');
 }else {
 	if($senhadecodificada==$senha){
-		session_start();
 		$_SESSION['usuario'] = $usuario;
 		header('Location: menu.php');
 	}

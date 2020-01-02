@@ -9,13 +9,27 @@
 <body style="background-color:#696969">
  <?php 
  session_start();
+ $usuario = $_SESSION['usuario'];
   if( !isset($_SESSION['usuario'])==true ){
      unset($_SESSION['usuario']);
     header('Location: index.php');
   }
+  include 'conexao.php';
+  $sql = "SELECT nivel_usuario FROM usuario WHERE email_usuario = '$usuario'";
+  $buscar = mysqli_query($conexao,$sql);
+  $dados = mysqli_fetch_array($buscar);
+  $nivel = $dados['nivel_usuario'];
  ?>
 <div class="container" style="margin-top: 100px;" >
+ <?php 
+ if(($nivel == 1) || ($nivel == 2)){
 
+ 
+ ?>
+ <div class="text-right" style="margin-top: 40px"> 
+  <a href="index.php" role="button" class="btn btn-sm btn-primary">
+      Sair</a>
+</div>
 	<div class="row"  >
   <div class="col-sm-6" style="margin-top:20px ">
     <div class="card">
@@ -26,6 +40,7 @@
       </div>
     </div>
   </div>
+<?php } ?> 
   <div class="col-sm-6" style="margin-top:20px">
     <div class="card">
       <div class="card-body">
@@ -35,6 +50,11 @@
       </div>
     </div>
   </div>
+   <?php 
+ if(($nivel == 1) || ($nivel == 2)){
+
+ 
+ ?>
   <div class="col-sm-6" style="margin-top:20px">
     <div class="card">
       <div class="card-body">
@@ -44,7 +64,7 @@
       </div>
     </div>
   </div>
-
+ <?php  } ?>
   <div class="col-sm-6" style="margin-top:20px">
     <div class="card">
       <div class="card-body">
@@ -54,7 +74,11 @@
       </div>
     </div>
   </div>
+ <?php 
+ if(($nivel == 1) || ($nivel == 2)){
 
+ 
+ ?>
    <div class="col-sm-6" style="margin-top:20px">
     <div class="card">
       <div class="card-body">
@@ -64,6 +88,7 @@
       </div>
     </div>
   </div>
+<?php  } ?>
 
    <div class="col-sm-6" style="margin-top:20px">
     <div class="card">

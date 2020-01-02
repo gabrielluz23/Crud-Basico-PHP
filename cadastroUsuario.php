@@ -45,7 +45,7 @@
 					Funcionario
 				</option>
 				<option value="3">
-					Adiministrador
+					Conferente
 				</option>
 			</select>
 		</div>

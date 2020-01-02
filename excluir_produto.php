@@ -11,7 +11,7 @@ $excluir = mysqli_query($conexao,$sql);
 <div class="container centralizar ">
 <center>
 <h4>Produto Excluido com sucesso!</h4>
-</center>>
+</center>
 <div style="padding-top: 20px">
 	<center>
 	<a href="listarProdutos.php" role="button" class="btn btn-sm btn-primary">Voltar </a>

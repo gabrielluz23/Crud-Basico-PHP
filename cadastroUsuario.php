@@ -5,19 +5,17 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-<body style="background-color:#696969">
+<body style="background-color:#696969;color: white">
 
 <div class="container" style=" margin-top: 200px;
-                max-width: 400px">
+                max-width: 400px;" >
 
 
-	<div style="padding: 10px ;
-		-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,1);
-		-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,1);
-		box-shadow: 10px 10px 5px 0px rgba(0,0,0,1);
-		border-radius: 10px;
-	    background-color: #a4a4a4">
-	<form>
+	    <div style="text-align: right;">
+	    	<a href="index.php" role="buton" class="btn btn-primary">Voltar </a>
+	    </div>
+
+	<form action="inserirUsuario.php" method="POST">
 		<div class="form-group">
 			<label>Nome de usuario</label>
 			<input type="text" name="nomeUsuario" class="form-control" required autocomplete="off" placeholder="Nome Completo">
@@ -58,7 +56,7 @@
 
 		</div>
 	</form>
-</div>
+
 
 
 

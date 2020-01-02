@@ -7,11 +7,17 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body style="background-color:#696969">
-
+ <?php 
+ session_start();
+  if( !isset($_SESSION['usuario'])==true ){
+     unset($_SESSION['usuario']);
+    header('Location: index.php');
+  }
+ ?>
 <div class="container" style="margin-top: 100px;" >
 
-	<div class="row" >
-  <div class="col-sm-6" style="margin-top:20px">
+	<div class="row"  >
+  <div class="col-sm-6" style="margin-top:20px ">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Adicionar Produto</h5>

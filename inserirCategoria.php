@@ -17,7 +17,7 @@ echo $sql;
 <div class="container centralizar ">
 <center>
 <h4>Categoria adicionada com sucesso!</h4>
-</center>>
+</center>
 <div style="padding-top: 20px">
 	<center>
 	<a href="adicionarCategoria.php" role="button" class="btn btn-sm btn-primary">Cadastrar nova categoria </a>

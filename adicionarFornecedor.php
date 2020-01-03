@@ -1,3 +1,6 @@
+<?php 
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +10,6 @@
 </head>
 <body style="background-color:#696969;color: white">
   <?php 
- session_start();
   if( !isset($_SESSION['usuario'])==true ){
      unset($_SESSION['usuario']);
     header('Location: index.php');

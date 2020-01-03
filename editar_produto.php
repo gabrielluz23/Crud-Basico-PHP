@@ -1,4 +1,5 @@
-<?php 
+<?php
+session_start();
 include 'conexao.php';
  $id = $_GET['id'];
 ?>

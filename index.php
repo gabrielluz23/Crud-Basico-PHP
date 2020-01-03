@@ -1,3 +1,6 @@
+<?php 
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +11,6 @@
 
 <body style="background-color:#696969;color: white">
 <?php 
-  session_start();
     unset ($_SESSION['usuario']);
 ?>
 <div class="container" style=" margin-top: 200px;
